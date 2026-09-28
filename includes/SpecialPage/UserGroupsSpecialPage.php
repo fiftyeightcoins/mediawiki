@@ -745,7 +745,7 @@ abstract class UserGroupsSpecialPage extends SpecialPage {
 	 *   of {@see $groupMemberships}. It's recommended to pass memberships fetched from the primary
 	 *   database, so that concurrent changes made by other requests are detected.
 	 */
-	protected function conflictOccured( ?array $groupMembershipsPrimary = null ): bool {
+	protected function conflictOccurred( ?array $groupMembershipsPrimary = null ): bool {
 		$request = $this->getRequest();
 		$receivedConflictCheck = $request->getVal( self::CONFLICT_CHECK_FIELD );
 		$expectedConflictCheck = $this->makeConflictCheckKey( $groupMembershipsPrimary );

@@ -257,7 +257,7 @@ class SpecialUserRights extends UserGroupsSpecialPage {
 		// This conflict check doesn't prevent from a situation when two concurrent DB transactions
 		// update the same user's groups, but that's highly unlikely.
 		$userGroupsPrimary = $this->userGroupManager->getUserGroupMemberships( $user, IDBAccessObject::READ_LATEST );
-		if ( $this->conflictOccured( $userGroupsPrimary ) ) {
+		if ( $this->conflictOccurred( $userGroupsPrimary ) ) {
 			return Status::newFatal( 'userrights-conflict' );
 		}
 
